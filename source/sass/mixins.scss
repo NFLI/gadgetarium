@@ -1,0 +1,41 @@
+@mixin text-parameters ($size: 16px, $weight: 400, $line-height: 1.49) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}
+
+@mixin pseudo-element ($content: "", $position: absolute, $display: block) {
+  content: $content;
+  position: $position;
+  display: $display;
+}
+
+@mixin mdmobile {
+  @media (max-width: $mobile-only) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: $laptop-width) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin retina {
+  @media (min-resolution: $retina-resolution) {
+    @content;
+  }
+}

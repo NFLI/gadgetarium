@@ -1,0 +1,230 @@
+.offer__wrapper {
+  @media(min-width: 1500px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.offer__text-wrapper {
+  @media(min-width: 1500px) {
+    max-width: 445px;
+  }
+}
+
+.offer__heading {
+  font-family: "Montserrat";
+  font-weight: 900;
+  font-size: 25px;
+  line-height: 30px;
+  color: $text-color;
+  margin-top: 11px;
+  margin-bottom: 24px;
+  padding-right: 25px;
+
+  & br {
+    display: none;
+  }
+
+  @include tablet {
+    margin-top: 57px;
+    width: 465px;
+    font-size: 36px;
+    line-height: 44px;
+    padding-right: 0;
+  }
+
+  @include desktop {
+    margin-bottom: 26px;
+  }
+
+  @media(min-width: 1500px) {
+    margin-top: 0;
+
+    & br {
+      display: inline;
+    }
+  }
+}
+
+.offer__text {
+  margin-top: 0;
+  margin-bottom: 29px;
+
+  @include tablet {
+    font-size: 16px;
+    padding-right: 45px;
+  }
+
+  @include desktop {
+    margin-bottom: 32px;
+  }
+}
+
+.offer__slider {
+  margin-top: 51px;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-top: 32px;
+  padding-bottom: 35px;
+  background-color: rgba($theme-color, 0.06);
+
+  @include tablet {
+    margin-top: 70px;
+    padding-bottom: 32px;
+  }
+
+  @include desktop {
+   margin-left: calc((-100vw + 1230px) / 2 - 30px);
+   margin-right: calc((-100vw + 1230px) / 2 - 30px);
+  }
+
+  @media(min-width: 1500px) {
+    margin-top: 0;
+    width: 685px;
+    background: linear-gradient(90deg, #FFFFFF 7.08%, rgba(49, 69, 255, 0.06) 7.09%);
+  }
+
+  @media(min-width: 1922px) {
+    margin-right: -250px;
+  }
+}
+
+.offer__slider-wrapper {
+  margin: 0 15px;
+  padding: 31px 17px 33px 8px;
+  color: white;
+  background-image: url("../img/raster/offer-sliderbg-mobile@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0px 15px 50px rgba(45, 47, 94, 0.3);
+
+  @include retina {
+    background-image: url("../img/raster/offer-sliderbg-mobile@2x.jpg");
+  }
+
+  @include tablet {
+    position: relative;
+    padding: 31px 33px 39px 8px;
+    background-image: url("../img/raster/offer-sliderbg-tablet@1x.jpg");
+
+    @include retina {
+      background-image: url("../img/raster/offer-sliderbg-tablet@2x.jpg");
+    }
+  }
+
+  @include desktop {
+    margin: 0 calc((100vw - 1230px) / 2 + 30px);
+  }
+
+  @media(min-width: 1500px) {
+    margin: 0;
+  }
+}
+
+.offer__slider-img {
+  display: block;
+  width: 265px;
+  height: 144px;
+
+  @include tablet {
+    width: 687px;
+    height: 374px;
+  }
+
+  @media (min-width: 1500px) {
+    position: relative;
+    right: 160px;
+  }
+}
+
+.slider-offer__wrapper {
+  position: relative;
+  margin-left: 17px;
+  margin-top: 33px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background-color: white;
+    left: -18px;
+    top: -12px;
+  }
+
+  @include tablet {
+    position: absolute;
+    width: 175px;
+    right: 33px;
+    bottom: 72px;
+  }
+
+  @media(min-width: 1500px) {
+    right: 121px;
+  }
+}
+
+.offer__slider-heading {
+  margin: 0;
+  @include text-parameters(15px, 900, 18px);
+  letter-spacing: 0.02em;
+}
+
+.offer__slider-text {
+  margin-top: 10px;
+  margin-bottom: 27px;
+  @include text-parameters(12px, 400, 15px);
+  color: #ffffff;
+
+  @include tablet {
+    margin-bottom: 14px;
+  }
+}
+
+.offer__slider-price {
+  display: flex;
+  margin: 0;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 446px;
+}
+
+.offer__slider-price b {
+  font-size: 13px;
+}
+
+.offer__slider-link {
+  display: block;
+  width: 20px;
+  height: 17px;
+  background-image: url("../img/vector/icon-arrow.svg");
+  background-size: 20px 17px;
+  background-repeat: no-repeat;
+  font-size: 0;
+}
+
+.offer__slider-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 47px;
+  margin-left: 17px;
+
+  @include tablet {
+    margin-top: 0;
+    margin-left: 37px;
+    margin-top: -8px;
+  }
+}
+
+.offer__slider-bullet {
+  width: 39px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.35);
+
+  &--active {
+    background: #ffffff;
+  }
+}

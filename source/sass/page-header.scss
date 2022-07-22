@@ -1,0 +1,246 @@
+.page-header {
+  position: relative;
+}
+
+.page-header__wrapper {
+  padding: 40px 15px;
+  display: grid;
+  grid-template-columns: 135px 80px auto;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 28px;
+
+  @include tablet {
+    display: flex;
+  }
+
+  @include desktop {
+    padding: 40px 30px;
+  }
+}
+
+.page-header__logo {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.page-header__logo img {
+  display: block;
+}
+
+.main-nav {
+  margin-bottom: 14px;
+  margin-left: 17px;
+
+  &--opened {
+    margin-bottom: 3px;
+  }
+
+  @include tablet {
+    order: 1;
+    margin-bottom: 18px;
+  }
+
+  @include desktop {
+    order: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+}
+
+.main-nav__toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 27px;
+  height: 20.5px;
+  z-index: 1;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  background: 0 0;
+  padding: 0;
+  transform-origin: 50% 50%;
+  cursor: pointer;
+  transition: top 0.5s;
+
+  &::before {
+    position: absolute;
+    content: "";
+    background-color: $text-color;
+    width: 27px;
+    height: 2.4px;
+    box-shadow: 0 7px 0 0#2a2d46,0 14px 0 0#2a2d46;
+    transition: background-color 0.5s, box-shadow 0.5s;
+  }
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.main-nav--opened .overlay {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #000000;
+  opacity: 0.85;
+  animation-name: fadeOverlay;
+  animation-duration: 0.4s;
+}
+
+.main-nav--opened .main-nav__toggle {
+  padding-left: 3px;
+  width: 26px;
+  height: 26px;
+  background: 0 0;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    background-color: white;
+    width: 21px;
+    height: 2px;
+    box-shadow: none;
+    transition: background-color width 0.2s;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+    transition: transform 0.5s;
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+    transition: transform 0.5s;
+  }
+}
+
+.page-header__nav-list {
+  display: none;
+  opacity: 0;
+  transition: 0.4s;
+
+  .main-nav--opened & {
+    margin-top: 35px;
+    position: absolute;
+    right: 15px;
+    display: block;
+    z-index: 1;
+    text-align: right;
+    line-height: 21px;
+    opacity: 1;
+    animation-name: fade;
+    animation-duration: 0.65s;
+  }
+
+  @include desktop {
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    gap: 29px;
+    padding: 0;
+  }
+}
+
+.main-nav__item {
+  margin-bottom: 35px;
+
+  @include desktop {
+    margin-bottom: 0;
+  }
+}
+
+.main-nav__link {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 21px;
+  color: white;
+  transition: 0.3s;
+
+  &:hover {
+    color: $theme-color;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  @include desktop {
+    font-size: 12px;
+    line-height: 15px;
+    color: $text-color;
+  }
+}
+
+.more-items {
+  cursor: pointer;
+
+  @include desktop {
+    margin-bottom: 3px;
+  }
+}
+
+.more-items__icon {
+  display: inline-block;
+  width: 20px;
+  height: 4px;
+  background-image: url("../img/vector/more-icon.svg");
+  background-repeat: no-repeat;
+  background-size: 20px 4px;
+
+  @include desktop {
+    background-image: url("../img/vector/more-icon--desktop.svg");
+  }
+}
+
+.page-header__btn {
+  display: none;
+
+  @include desktop {
+    display: inline-block;
+  }
+}
+
+.tel {
+  display: flex;
+  align-items: center;
+  @include text-parameters(13px, 700, 15px);
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  cursor: pointer;
+  @include text-parameters(12px, 700, 15px);
+  color: $text-color;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5.5px solid transparent;
+    border-right: 5.5px solid transparent;
+    border-top: 5px solid $text-color;
+    margin-left: 7px;
+  }
+}
+
+.cart__icon {
+  display: inline-block;
+  background: url("../img/vector/cart-icon.svg") no-repeat center;
+  background-size: 25px;
+  width: 25px;
+  height: 25px;
+  margin-right: 16px;
+}

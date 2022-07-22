@@ -1,0 +1,74 @@
+{
+  "name": "gadgetarium",
+  "version": "1.0.0",
+  "description": "Магазин цифровых решений",
+  "main": "index.html",
+  "devDependencies": {
+    "@htmlacademy/editorconfig-cli": "1.0.0",
+    "autoprefixer": "10.4.0",
+    "browser-sync": "^2.27.10",
+    "del": "^6.1.1",
+    "gh-pages": "^4.0.0",
+    "gulp": "4.0.2",
+    "gulp-dart-sass": "^1.0.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "7.1.0",
+    "gulp-libsquoosh": "^1.1.2",
+    "gulp-plumber": "1.2.1",
+    "gulp-postcss": "9.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-svgmin": "^4.1.0",
+    "gulp-svgstore": "^9.0.0",
+    "gulp-terser": "^2.1.0",
+    "postcss": "8.3.11",
+    "postcss-csso": "^6.0.0",
+    "stylelint": "13.13.1",
+    "stylelint-config-htmlacademy": "0.1.11"
+  },
+  "scripts": {
+    "editorconfig": "editorconfig-cli",
+    "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
+    "lint": "npm run editorconfig && npm run stylelint",
+    "build": "gulp default",
+    "start": "npm run build && gulp server",
+    "deploy": "gh-pages -d build"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all",
+    "not < 0.25%"
+  ],
+  "editorconfig-cli": [
+    "*.json",
+    "*.js",
+    "source/*.html",
+    "source/js/**/*.js",
+    "source/img/**/*.svg",
+    "source/sass/**/*.scss"
+  ],
+  "engines": {
+    "node": "^16"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/NFLI/gadgetarium.git"
+  },
+  "keywords": [
+    "gadgetarium",
+    "e-commerce",
+    "study-work"
+  ],
+  "author": "NFLI",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NFLI/gadgetarium/issues"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "swiper": "^8.3.1"
+  },
+  "homepage": "https://github.com/NFLI/gadgetarium#readme"
+}
