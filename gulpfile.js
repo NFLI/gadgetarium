@@ -5,6 +5,7 @@ import htmlmin from "gulp-htmlmin"; //
 import sass from "gulp-dart-sass"; //
 import rename from "gulp-rename"; //
 import svgo from "gulp-svgmin"; //
+import svgstore from "gulp-svgstore";
 import imagemin from "gulp-imagemin"; //
 import postcss from "gulp-postcss"; //
 import csso from "postcss-csso"; //
@@ -54,6 +55,16 @@ const svgImages = () =>
 const svgIcons = () => gulp.src("source/img/vector/*.svg")
   .pipe(svgo())
   .pipe(gulp.dest("build/img/vector"));
+
+  const sprite = () => {
+    return gulp.src("source/img/vector/*-icon.svg")
+    .pipe(svgo())
+    .pipe(svgstore({
+    inlineSvg: true
+    }))
+    .pipe(rename("sprite.svg"))
+    .pipe(gulp.dest("build/img/vector"));
+    }
 
 const reload = (done) => {
   browserSync.reload();
@@ -121,6 +132,6 @@ const watcher = () => {
 // Build
 
 export default gulp.series(
-  clean, copy, optimizeImages, svgIcons, svgImages, reload, html, styles, scripts, server, watcher
+  clean, copy, optimizeImages, svgIcons, svgImages, sprite, reload, html, styles, scripts, server, watcher
 );
 

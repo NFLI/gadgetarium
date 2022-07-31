@@ -1,0 +1,128 @@
+.page-footer {
+  margin-top: 71px;
+  background-color: #343a62;
+
+  @include tablet {
+    margin-top: 102px;
+  }
+
+  @include desktop {
+    margin-top: 79px;
+  }
+}
+
+.page-footer__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 64px;
+  padding-bottom: 50.4px;
+
+  @include tablet {
+    padding-left: 29px;
+    justify-content: start;
+    align-items: start;
+    padding-bottom: 58px;
+  }
+
+  @include desktop {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 136px;
+    padding-bottom: 132px;
+    padding-left: 0;
+  }
+}
+
+.page-footer__logo {
+  @include desktop {
+    margin-right: 77px;
+  }
+}
+
+.page-footer__nav-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  margin-bottom: 25px;
+  padding-left: 0;
+
+  @include tablet {
+    gap: 29px;
+  }
+
+  & .main-nav__item {
+    margin-bottom: 0;
+  }
+
+  & .more-items {
+    margin-bottom: 5px;
+  }
+
+  & .main-nav__link {
+    @include text-parameters(12px, 400, 15px);
+  }
+
+  @include desktop {
+    margin: 0;
+    margin-left: -65px;
+    margin-right: -24px;
+
+    & .main-nav__link {
+    color: #ffffff;
+    transition: 0.3s;
+    }
+
+    & .main-nav__link:hover {
+      text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+    }
+
+    & .more-items svg {
+    fill: white;
+    }
+  }
+}
+
+.page-footer__tel {
+  color: #ffffff;
+
+  @include desktop {
+    order: 1;
+    margin-right: 14px;
+  }
+}
+
+.page-footer__btn {
+  margin-top: 32px;
+
+  @include desktop {
+    margin-top: 0;
+    order: 2;
+  }
+}
+
+.page-footer__button-up {
+  margin-top: 45px;
+  background: 0 0;
+  border: none;
+  outline: none;
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    filter: drop-shadow(0px 2px 8px rgba(255, 255, 255, 0.4));
+  }
+
+  @include tablet {
+    margin-left: auto;
+    margin-top: -19px;
+    margin-right: 35px;
+  }
+
+  @include desktop {
+    margin: 0 0 0 10px;
+  }
+}

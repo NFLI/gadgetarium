@@ -1,0 +1,145 @@
+.promo {
+  margin-top: 75px;
+  overflow: hidden;
+
+  @include tablet {
+    margin-top: 97px;
+  }
+
+  @include desktop {
+    margin-top: 99.18px;
+  }
+}
+
+.promo__item {
+  flex: 1 0 77.3%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0px 15px 50px rgba(45, 47, 94, 0.3);
+
+  @include desktop {
+    flex: 1 0 36%;
+  }
+}
+
+.promo__item-scooters {
+  background-image: url("../img/raster/scooterpromo-bg-mobile@1x.jpg");
+  margin-right: 20px;
+
+  @include retina {
+    background-image: url("../img/raster/scooterpromo-bg-mobile@2x.jpg");
+  }
+
+  @include tablet {
+    margin-right: 30px;
+    background-image: url("../img/raster/scooterpromo-bg-tablet@1x.jpg");
+
+    @include retina {
+      background-image: url("../img/raster/scooterpromo-bg-tablet@2x.jpg");
+    }
+  }
+}
+
+.promo__item-music {
+  background-image: url("../img/raster/musicpromo-bg-mobile@1x.jpg");
+
+  @include retina {
+    background-image: url("../img/raster/musicpromo-bg-mobile@2x.jpg");
+  }
+
+  @include tablet {
+    background-image: url("../img/raster/musicpromo-bg-tablet@1x.jpg");
+
+    @include retina {
+      background-image: url("../img/raster/musicpromo-bg-tablet@2x.jpg");
+    }
+  }
+}
+
+.promo__item-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: auto;
+  height: 412px;
+  padding: 16px 16px 64px 18px;
+
+  @include tablet {
+    height: 425px;
+    padding: 27px 33px 65px 49px;
+  }
+}
+
+.promo__item-music .promo__item-wrapper {
+  @include tablet {
+    padding: 28px 30px 70px 55px;
+  }
+
+  @include desktop {
+    padding: 28px 30px 64px 55px;
+  }
+}
+
+.promo__item-link {
+  margin-left: auto;
+  @include text-parameters(40px, 900, 30px);
+  color: #ffffff;
+}
+
+.promo__text-wrapper {
+  position: relative;
+  margin-left: 30px;
+  margin-right: auto;
+  margin-bottom: 5px;
+  vertical-align: bottom;
+  color: #ffffff;
+
+  @include tablet {
+    margin-left: 38px;
+    margin-bottom: 0px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    background-color: #ffffff;
+    left: -29px;
+    top: -11px;
+
+    @include tablet {
+      left: -38px;
+      top: -3px;
+      width: 23px;
+      height: 23px;
+    }
+  }
+}
+
+.promo__heading {
+  width: 200px;
+  @include text-parameters(19px, 900, 121%);
+  margin-bottom: 20px;
+
+  @include tablet {
+    width: 377px;
+    font-size: 27px;
+    margin-bottom: 10px;
+  }
+}
+
+.promo__text {
+  margin: 0;
+  width: 172px;
+  @include text-parameters(13px, 400, 136%);
+
+  @include tablet {
+    font-size: 16px;
+    width: 280px;
+    margin-bottom: 5px;
+  }
+}
+

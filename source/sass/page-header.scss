@@ -3,25 +3,34 @@
 }
 
 .page-header__wrapper {
-  padding: 40px 15px;
+  padding: 40px 15px 30px 15px;
   display: grid;
   grid-template-columns: 135px 80px auto;
   align-items: center;
   justify-content: space-between;
   row-gap: 28px;
+  animation-name: fade;
+  animation-duration: 1.2s;
 
   @include tablet {
+    padding: 38px 15px 37px;
     display: flex;
   }
 
   @include desktop {
-    padding: 40px 30px;
+    padding: 27px 30px;
+    padding-bottom: 28.66px;
   }
 }
 
 .page-header__logo {
   grid-column-start: 1;
   grid-column-end: 3;
+
+  @include desktop {
+    margin-right: 49px;
+    margin-left: 3px;
+  }
 }
 
 .page-header__logo img {
@@ -54,7 +63,7 @@
   align-items: center;
   width: 27px;
   height: 20.5px;
-  z-index: 1;
+  z-index: 2;
   margin: 0;
   border: 0;
   outline: 0;
@@ -80,19 +89,22 @@
 }
 
 .main-nav--opened .overlay {
-  position: absolute;
+  position: fixed;
   display: block;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
   background-color: #000000;
+  z-index: 2;
+  pointer-events: auto;
   opacity: 0.85;
   animation-name: fadeOverlay;
   animation-duration: 0.4s;
 }
 
 .main-nav--opened .main-nav__toggle {
+  position: relative;
   padding-left: 3px;
   width: 26px;
   height: 26px;
@@ -131,7 +143,7 @@
     position: absolute;
     right: 15px;
     display: block;
-    z-index: 1;
+    z-index: 2;
     text-align: right;
     line-height: 21px;
     opacity: 1;
@@ -189,14 +201,17 @@
 
 .more-items__icon {
   display: inline-block;
+  border: none;
+  background: 0 0;
+  padding: 0;
   width: 20px;
   height: 4px;
-  background-image: url("../img/vector/more-icon.svg");
-  background-repeat: no-repeat;
-  background-size: 20px 4px;
+  fill: white;
 
   @include desktop {
-    background-image: url("../img/vector/more-icon--desktop.svg");
+    & svg {
+    fill: $text-color;
+    }
   }
 }
 
@@ -212,6 +227,13 @@
   display: flex;
   align-items: center;
   @include text-parameters(13px, 700, 15px);
+}
+
+.page-header__tel {
+  @include desktop {
+    margin-left: 16px;
+    margin-right: 5px;
+  }
 }
 
 .cart {

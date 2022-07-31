@@ -23,7 +23,8 @@
     "postcss": "8.3.11",
     "postcss-csso": "^6.0.0",
     "stylelint": "13.13.1",
-    "stylelint-config-htmlacademy": "0.1.11"
+    "stylelint-config-htmlacademy": "0.1.11",
+    "svgstore": "^3.0.1"
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",

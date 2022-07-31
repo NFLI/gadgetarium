@@ -57,6 +57,10 @@ table {
   clip: rect(0 0 0 0);
 }
 
+.scroll-hidden {
+  overflow: hidden;
+}
+
 .container {
   padding: $mobile-padding;
   margin: 0 auto;
@@ -81,8 +85,8 @@ table {
 
 .btn {
   display: inline-block;
-  padding: 18px 46px 17px 46px;
-  font-size: 15px;
+  padding: 18px 56px 18px 46px;
+  font-size: 14px;
   font-weight: 900;
   line-height: 1.49;
   letter-spacing: 0.005em;
@@ -97,6 +101,11 @@ table {
 
   &:active {
     opacity: 0.8;
+  }
+
+  @include tablet {
+    padding: 17px 46px;
+    font-size: 15px;
   }
 }
 
